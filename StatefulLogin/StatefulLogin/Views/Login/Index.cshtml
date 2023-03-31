@@ -1,0 +1,33 @@
+﻿@model StatefulLogin.ViewModels.LoginViewModel;
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="flex-column align-items-center justify-content-center">
+        <div class="row">
+            <label for="Username">Usuário:</label>
+            <div class="col-md-3">
+                @Html.TextBoxFor(x => x.Username, new {@class = "form-control"})
+            </div>
+        </div>
+        <div class="row">
+            <label for="Password">Senha:</label>
+            <div class="col-md-3">
+                @Html.TextBoxFor(x => x.Password, new {@type = "password", @class = "form-control"})
+                @if (ViewBag.Error != null)
+                {
+                    <p class="text-danger">@ViewBag.Error</p>
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <input type="submit" value="Entrar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

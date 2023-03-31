@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Bem-vindo, @ViewBag.Username!</h2>
+
+<p>Você está logado. Esse é um exemplo de aplicação Stateful, já que há um Cookie armazenado na sua máquina que ajuda a manter informações da sessão!</p>
+
+@Html.ActionLink("Sair", "Logout", "Login")
